@@ -1,0 +1,35 @@
+{
+  "_chunk-D3MKjcvV.js": {
+    "file": "assets/chunks/chunk-D3MKjcvV.js",
+    "name": "execHook"
+  },
+  "_src_styles_globals-8da7f7cb.P39Zc_Tf.css": {
+    "file": "assets/static/src_styles_globals-8da7f7cb.P39Zc_Tf.css",
+    "src": "_src_styles_globals-8da7f7cb.P39Zc_Tf.css"
+  },
+  "node_modules/vike/dist/esm/client/runtime-client-routing/entry.js": {
+    "file": "assets/entries/entry-client-routing.CB4TA802.js",
+    "name": "entries/entry-client-routing",
+    "src": "node_modules/vike/dist/esm/client/runtime-client-routing/entry.js",
+    "isEntry": true,
+    "imports": [
+      "_chunk-D3MKjcvV.js"
+    ],
+    "dynamicImports": [
+      "virtual:vike:page-entry:client:/pages/index"
+    ]
+  },
+  "virtual:vike:page-entry:client:/pages/index": {
+    "file": "assets/entries/pages_index.8ma04Ekl.js",
+    "name": "entries/pages/index",
+    "src": "virtual:vike:page-entry:client:/pages/index",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_chunk-D3MKjcvV.js"
+    ],
+    "css": [
+      "assets/static/src_styles_globals-8da7f7cb.P39Zc_Tf.css"
+    ]
+  }
+}
