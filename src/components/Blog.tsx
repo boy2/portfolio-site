@@ -11,6 +11,13 @@ export default function Blog() {
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
 
+  // HTMLエンティティをデコードする関数
+  const decodeHtmlEntities = (text: string): string => {
+    const textarea = document.createElement('textarea');
+    textarea.innerHTML = text;
+    return textarea.value;
+  };
+
   useEffect(() => {
     const fetchBlogPosts = async () => {
       try {
@@ -21,13 +28,13 @@ export default function Blog() {
         const items = xml.querySelectorAll('item');
 
         const posts: BlogPost[] = Array.from(items).slice(0, 3).map(item => {
-          const title = item.querySelector('title')?.textContent || '';
+          const title = decodeHtmlEntities(item.querySelector('title')?.textContent || '');
           const link = item.querySelector('link')?.textContent || '';
           const pubDate = item.querySelector('pubDate')?.textContent || '';
           const description = item.querySelector('description')?.textContent || '';
 
           // HTMLタグを削除して最初の100文字を取得
-          const plainText = description.replace(/<[^>]*>/g, '');
+          const plainText = decodeHtmlEntities(description.replace(/<[^>]*>/g, ''));
           const excerpt = plainText.length > 100
             ? plainText.substring(0, 100) + '...'
             : plainText;
