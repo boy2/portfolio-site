@@ -1,0 +1,39 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "schedule": [
+    "before 3am on Monday"
+  ],
+  "timezone": "Asia/Tokyo",
+  "packageRules": [
+    {
+      "groupName": "React ecosystem",
+      "matchPackagePatterns": ["^react", "^@types/react"],
+      "schedule": ["before 3am on Monday"]
+    },
+    {
+      "groupName": "Vite ecosystem",
+      "matchPackagePatterns": ["^vite", "^@vitejs/", "^vike"],
+      "schedule": ["before 3am on Monday"]
+    },
+    {
+      "groupName": "Tailwind CSS",
+      "matchPackagePatterns": ["^tailwindcss", "^@tailwindcss/"],
+      "schedule": ["before 3am on Monday"]
+    },
+    {
+      "groupName": "Development dependencies",
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupSlug": "dev-dependencies"
+    }
+  ],
+  "vulnerabilityAlerts": {
+    "enabled": true
+  },
+  "dependencyDashboard": true,
+  "prConcurrentLimit": 10,
+  "prHourlyLimit": 2
+}
